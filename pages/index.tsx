@@ -48,10 +48,10 @@ export default function Home() {
   }
   return (
 <main>
-<div className="text-center bg-white border-black border-2 border-t-0 pb-2">
+{/* <div className="text-center bg-white border-black border-2 border-t-0 pb-2">
   <div className=" ml-96 flex items-center justify-center" >
     <div className=" mr-96"> 
-      <h1 className="text-4xl font-bold mb-2">FastTyping Tournament</h1>
+      <h1 className="text-4xl font-bold mb-2 sm:xl">FastTyping Tournament</h1>
       <div className='flex items-center justify-center'>
       <p className="text-gray-600 text-xl">at NIS School by </p> <p className='text-green-600 text-xl font-bold'>&nbsp;Asset Almas 11C</p>
       </div>
@@ -59,34 +59,67 @@ export default function Home() {
     </div>
     <Image src="/nis.png" alt="NIS Image" width={80} height={100} />
   </div>
+</div> */}
+
+<nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+  <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+  <a href="" className="flex items-center">
+      <img src="/nis.png" className="h-8 mr-3" alt="Flowbite Logo"></img>
+      <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">FastTyping Tournament</span>
+  </a>
+
+  <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+    <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+      <li>
+        <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Asset Almas 11C</a>
+      </li>
+      <li>
+        <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Fullstack Development</a>
+      </li>
+    </ul>
+  </div>
+  </div>
+</nav>
+
+<div className=" lg:flex mt-32">
+<div className='block w-2/3 ml-12 mt-12 items-center'>
+<h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-gray-700 md:text-5xl lg:text-6xl">About <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-700 from-green-500">FastTyping Tournament</span></h1>
+<p className="text-xl font-normal text-gray-500 lg:text-2xl dark:text-gray-600 mt-8">Welcome to the Fast Typing Tournament at NIS School, organized by Asset Almas from 11C.</p>
+<p className="text-xl font-normal text-gray-500 lg:text-2xl dark:text-gray-600">This exciting competition will test your typing speed and accuracy. Join us for a fun and challenging event! And don't forget, we have sweet prizes for the top three winners!</p>
+
+
 </div>
-
-    <div className='flex'>
-        <div className="mt-28">
-            <div className="text-center w-500">
-                <h2 className="text-6xl font-bold mb-16 text-green-500">About FastTyping Tournament</h2>
-                <p className="text-gray-700 text-2xl">Welcome to the Fast Typing Tournament at NIS School, organized by Asset Almas from 11C. This exciting competition will test your typing speed and accuracy. Join us for a fun and challenging event! And don't forget, we have sweet prizes for the top three winners!</p>
-            </div>
-        </div>
-
-    <div className="w-1/3 pr-8 pl-3 mt-8">
-        <div className="mt-8 mr-6 bg-white p-4 rounded-3xl text-center  border-black border-2">
-            <h2 className="text-2xl font-bold mb-4">Registration</h2>
-            <form className="space-y-4" onSubmit={e=>{
+<div className="max-md:flex max-md:justify-center max-md:items-center max-md:min-h-screen">
+  <div className=" max-md:mt-12 w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 ">
+    <form className="space-y-6" onSubmit={e=>{
                 e.preventDefault()
                 handleSubmit(form)
                 Notiflix.Notify.success('Вы успешно зарегистрировались!')
             }}>
-                <input type="text" placeholder="Name" className="w-full px-4 py-2 rounded-lg border border-gray-400 focus:outline-none focus:border-blue-500" value={form.name} onChange={e => setForm({... form, name:e.target.value})}/>
-                <input type="text" placeholder="Surname" className="w-full px-4 py-2 rounded-lg border border-gray-400 focus:outline-none focus:border-blue-500" value={form.surname} onChange={e => setForm({... form, surname:e.target.value})}/>
-                <input type="text" placeholder="Class" className="w-full px-4 py-2 rounded-lg border border-gray-400 focus:outline-none focus:border-blue-500" value={form.classnum} onChange={e => setForm({... form, classnum:e.target.value})}/>
-                <input type="text" placeholder="Phone number" className="w-full px-4 py-2 rounded-lg border border-gray-400 focus:outline-none focus:border-blue-500" value={form.phoneNumber} onChange={e => setForm({... form, phoneNumber:e.target.value})}/>
-                <input type="text" placeholder="Kazakh/English/Russian" className="w-full px-4 py-2 rounded-lg border border-gray-400 focus:outline-none focus:border-blue-500" value={form.selectedLang} onChange={e => setForm({... form, selectedLang:e.target.value})}/>
-                <button type="submit" className="w-full  bg-green-500 border-2 text-white py-2 rounded-lg hover:bg-white hover:text-black transition duration-200 hover:border-green-500">Submit</button>
-            </form>
-        </div> 
-    </div>
-    </div>
+        <h5 className="text-xl font-medium text-gray-900 dark:text-white">Sign in to our competition</h5>
+                    
+        <div>
+            <input type="text" placeholder="Name" required  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"value={form.name} onChange={e => setForm({... form, name:e.target.value})}/>
+
+        </div>
+        <div>
+        <input type="text" placeholder="Surname" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" value={form.surname} onChange={e => setForm({... form, surname:e.target.value})}/>
+        </div>
+        <div>
+        <input type="text" placeholder="Class" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" value={form.classnum} onChange={e => setForm({... form, classnum:e.target.value})}/>
+        
+        </div>
+        <div>
+        <input type="text" placeholder="Phone number" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" value={form.phoneNumber} onChange={e => setForm({... form, phoneNumber:e.target.value})}/>
+        </div>
+        <div>
+        <input type="text" placeholder="Kazakh/English/Russian" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" value={form.selectedLang} onChange={e => setForm({... form, selectedLang:e.target.value})}/>
+        </div>
+        <button type="submit" className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+    </form>
+</div>
+</div>
+</div>
     <script src="dist/notiflix-aio-3.2.6.min.js"></script>
 </main>
 
