@@ -79,7 +79,7 @@ export default function Home() {
 <div className='block w-2/3 ml-12 mt-12 items-center'>
 <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-gray-700 md:text-5xl lg:text-6xl">About <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-700 from-green-500">FastTyping Tournament</span></h1>
 <p className="text-xl font-normal text-gray-500 lg:text-2xl dark:text-gray-600 mt-8">Welcome to the Fast Typing Tournament at NIS School, organized by Asset Almas from 11C.</p>
-<p className="text-xl font-normal text-gray-500 lg:text-2xl dark:text-gray-600">This exciting competition will test your typing speed and accuracy. Join us for a fun and challenging event! And don't forget, we have sweet prizes for the top three winners!</p>
+<p className="text-xl font-normal text-gray-500 lg:text-2xl dark:text-gray-600">This exciting competition will test your typing speed and accuracy. Join us for a fun and challenging event! And don&apos; t forget, we have sweet prizes for the top three winners!</p>
 </div>
 <div className="max-md:flex max-md:justify-center max-md:items-center">
 
@@ -119,7 +119,7 @@ export default function Home() {
 
 
 
-    <script src="dist/notiflix-aio-3.2.6.min.js"></script>
+    <script src="dist/notiflix-aio-3.2.6.min.js" async></script>
 </main>
 
 
