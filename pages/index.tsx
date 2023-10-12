@@ -17,7 +17,7 @@ export default function Home() {
 
   async function create(data: FormData) {
     try {
-      fetch('http://localhost:3000/api/create', {
+      fetch('https://fast-typing-new.vercel.app/api/create', {
         body: JSON.stringify(data),
         headers: {
           'Content-Type': 'application/json'
